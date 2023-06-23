@@ -11,11 +11,21 @@ const Modal = ({ isOpen, onClose, children, clickOutsideToClose,closeBtnStyle })
     function closeBtnStylehandler(buttonStyle){
         if(buttonStyle){
             return (
-                <><Button func={onClose} title="닫기"/><Button title="확인"/></>
+                <div style={{position:"relative",left:"200px"}}><Button color="green" func={onClose} title="닫기"/><Button color="red" title="확인"/></div>
             )
         }else{
             return (
-                <button>X</button>
+                <button onClick={onClose} style={
+                    {backgroundColor:"#DDDDDD",
+                    fontSize:"15px",
+                    borderRadius:"100%", 
+                    border:"none",
+                    padding:"7px 11px",
+                    position:"relative",
+                    bottom:"95px",
+                    left:"280px"
+                }
+                }>X</button>
             )
         }
     }
@@ -33,7 +43,6 @@ const Modal = ({ isOpen, onClose, children, clickOutsideToClose,closeBtnStyle })
     `;
     const ModalContent = styled.div`
         width:300px;
-        height:600px;
         background-color: #fff;
         padding: 20px;
         border-radius: 4px;
